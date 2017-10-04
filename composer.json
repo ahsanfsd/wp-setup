@@ -1,0 +1,38 @@
+{
+    "name": "ahsanfsd/wp-setup",
+    "description": "This will create a WordPress base installation using wp-cli/wp-cli package and using vlucas/phpdotenv package to expose configuration values in PHP $_ENV super global.",
+    "type": "project",
+    "keywords": ["wordpress", "composer", "git"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahsan Rehman",
+            "email": "ahsan@fsdsolutions.com",
+            "homepage": "http://www.fsdsolutions.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.0",
+        "wp-cli/wp-cli": "^0.23.1",
+        "vlucas/phpdotenv": "^2.2",
+        "wpackagist-plugin/akismet": "^3.1"
+    },
+    "repositories":[
+        {"type":"composer", "url":"https://wpackagist.org"}
+    ],
+    "extra": {
+        "installer-paths": {
+            "public/wp-content/themes/{$name}/": ["vendor:wpackagist-theme"],
+            "public/wp-content/plugins/{$name}/": ["vendor:wpackagist-plugin"]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "vendor/bin/wp core download --path=public",
+            "rm -f public/wp-content/plugins/hello.php"
+        ]
+    }
+}
