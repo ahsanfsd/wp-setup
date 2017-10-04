@@ -1,21 +1,11 @@
-The MIT License (MIT)
+# GIT-WP-Base
+This project will create a base installation of Wordpress using the wp-cli/wp-cli package. This project also uses the vlucas/phpdotenv package to avoid committing various changes in the wp-config.php file.
 
-Copyright (c) 2017 FSD Solution
+## Installation
+Begin by installing this package through Composer.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+    composer create-project ahsanfsd/wp-setup <destination_directory>
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+After composer process is finished, update the parameter values in `.env` file to be used in wp-config.php.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Open the site in your browser and proceed with the WP installation. 
